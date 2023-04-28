@@ -1,5 +1,6 @@
 package com.github.sib_energy_craft.solar_panels.block;
 
+import com.github.sib_energy_craft.energy_api.Energy;
 import com.github.sib_energy_craft.solar_panels.block.entity.AbstractSolarPanelBlockEntity;
 import lombok.Getter;
 import net.minecraft.block.BlockRenderType;
@@ -22,8 +23,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.math.BigDecimal;
-
 /**
  * @since 0.0.1
  * @author sibmaks
@@ -31,11 +30,11 @@ import java.math.BigDecimal;
 public abstract class AbstractSolarPanelBlock extends BlockWithEntity {
 
     @Getter
-    private final BigDecimal energyPerTick;
+    private final Energy energyPerTick;
 
     protected AbstractSolarPanelBlock(@NotNull Settings settings, int energyPerTick) {
         super(settings);
-        this.energyPerTick = BigDecimal.valueOf(energyPerTick);
+        this.energyPerTick = Energy.of(energyPerTick);
     }
 
     @NotNull

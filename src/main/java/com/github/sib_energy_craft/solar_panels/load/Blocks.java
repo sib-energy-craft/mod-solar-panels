@@ -3,6 +3,7 @@ package com.github.sib_energy_craft.solar_panels.load;
 import com.github.sib_energy_craft.energy_api.utils.Identifiers;
 import com.github.sib_energy_craft.sec_utils.common.Identified;
 import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
+import com.github.sib_energy_craft.solar_panels.block.HighVoltageSolarPanelBlock;
 import com.github.sib_energy_craft.solar_panels.block.LowVoltageSolarPanelBlock;
 import com.github.sib_energy_craft.solar_panels.block.MiddleVoltageSolarPanelBlock;
 import com.github.sib_energy_craft.solar_panels.block.SolarPanelBlock;
@@ -21,6 +22,7 @@ public final class Blocks implements ModRegistrar {
     public static final Identified<SolarPanelBlock> SOLAR_PANEL;
     public static final Identified<LowVoltageSolarPanelBlock> LOW_VOLTAGE_SOLAR_PANEL;
     public static final Identified<MiddleVoltageSolarPanelBlock> MIDDLE_VOLTAGE_SOLAR_PANEL;
+    public static final Identified<HighVoltageSolarPanelBlock> HIGH_VOLTAGE_SOLAR_PANEL;
 
     static {
         var solarPanelSettings = FabricBlockSettings.of(Material.METAL)
@@ -36,5 +38,8 @@ public final class Blocks implements ModRegistrar {
 
         var middleVoltageSolarPanel = new MiddleVoltageSolarPanelBlock(solarPanelSettings, 64);
         MIDDLE_VOLTAGE_SOLAR_PANEL = register(Identifiers.of("middle_voltage_solar_panel"), middleVoltageSolarPanel);
+
+        var highVoltageSolarPanel = new HighVoltageSolarPanelBlock(solarPanelSettings, 512);
+        HIGH_VOLTAGE_SOLAR_PANEL = register(Identifiers.of("high_voltage_solar_panel"), highVoltageSolarPanel);
     }
 }

@@ -6,5 +6,8 @@
   "container.low_voltage_solar_panel": "Солнечная панель НН",
 
   "block.sib_energy_craft.middle_voltage_solar_panel": "Солнечная панель СН",
-  "container.middle_voltage_solar_panel": "Солнечная панель СН"
+  "container.middle_voltage_solar_panel": "Солнечная панель СН",
+
+  "block.sib_energy_craft.high_voltage_solar_panel": "Солнечная панель ВН",
+  "container.high_voltage_solar_panel": "Солнечная панель ВН"
 }

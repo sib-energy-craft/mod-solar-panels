@@ -1,6 +1,5 @@
 package com.github.sib_energy_craft.solar_panels.item;
 
-import com.github.sib_energy_craft.energy_api.Energy;
 import com.github.sib_energy_craft.solar_panels.block.AbstractSolarPanelBlock;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
@@ -22,10 +21,9 @@ public class SolarPanelBlockItem extends BlockItem {
     private final int output;
 
     public SolarPanelBlockItem(@NotNull AbstractSolarPanelBlock block,
-                               @NotNull Settings settings,
-                               @NotNull Energy output) {
+                               @NotNull Settings settings) {
         super(block, settings);
-        this.output = output.intValue();
+        this.output = block.getEnergyPerTick().intValue();
     }
 
     @Override

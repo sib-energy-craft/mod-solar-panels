@@ -111,7 +111,7 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
         blockEntity.working = timeOfDay >= 0 && timeOfDay <= 12000 && light >= 15;
 
         if(blockEntity.working) {
-            blockEntity.energy = Energy.of(blockEntity.block.getEnergyPerTick());
+            blockEntity.energy = blockEntity.block.getEnergyPerTick();
 
             var chargingStack = blockEntity.inventory.get(CHARGE_SLOT);
             var chargingStackItem = chargingStack.getItem();
@@ -212,7 +212,7 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
     @Override
     public EnergyOffer createOffer() {
         var energyPerTick = block.getEnergyPerTick();
-        return new EnergyOffer(this, Energy.of(energyPerTick));
+        return new EnergyOffer(this, energyPerTick);
     }
 
     @Override

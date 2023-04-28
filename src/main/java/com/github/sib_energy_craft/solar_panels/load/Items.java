@@ -1,6 +1,5 @@
 package com.github.sib_energy_craft.solar_panels.load;
 
-import com.github.sib_energy_craft.energy_api.Energy;
 import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
 import com.github.sib_energy_craft.solar_panels.item.SolarPanelBlockItem;
 import net.minecraft.item.Item;
@@ -16,20 +15,25 @@ public final class Items implements ModRegistrar {
     public static final SolarPanelBlockItem SOLAR_PANEL;
     public static final SolarPanelBlockItem LOW_VOLTAGE_SOLAR_PANEL;
     public static final SolarPanelBlockItem MIDDLE_VOLTAGE_SOLAR_PANEL;
+    public static final SolarPanelBlockItem HIGH_VOLTAGE_SOLAR_PANEL;
 
     static {
         var settings = new Item.Settings();
 
         SOLAR_PANEL = register(ItemGroups.FUNCTIONAL,
                 Blocks.SOLAR_PANEL,
-                it -> new SolarPanelBlockItem(it, settings, Energy.of(1)));
+                it -> new SolarPanelBlockItem(it, settings));
 
         LOW_VOLTAGE_SOLAR_PANEL = register(ItemGroups.FUNCTIONAL,
                 Blocks.LOW_VOLTAGE_SOLAR_PANEL,
-                it -> new SolarPanelBlockItem(it, settings, Energy.of(8)));
+                it -> new SolarPanelBlockItem(it, settings));
 
         MIDDLE_VOLTAGE_SOLAR_PANEL = register(ItemGroups.FUNCTIONAL,
                 Blocks.MIDDLE_VOLTAGE_SOLAR_PANEL,
-                it -> new SolarPanelBlockItem(it, settings, Energy.of(64)));
+                it -> new SolarPanelBlockItem(it, settings));
+
+        HIGH_VOLTAGE_SOLAR_PANEL = register(ItemGroups.FUNCTIONAL,
+                Blocks.HIGH_VOLTAGE_SOLAR_PANEL,
+                it -> new SolarPanelBlockItem(it, settings));
     }
 }
