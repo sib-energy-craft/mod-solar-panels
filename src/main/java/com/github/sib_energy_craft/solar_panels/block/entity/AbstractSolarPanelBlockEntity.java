@@ -8,15 +8,20 @@ import com.github.sib_energy_craft.energy_api.tags.CoreTags;
 import com.github.sib_energy_craft.sec_utils.screen.PropertyMap;
 import com.github.sib_energy_craft.sec_utils.utils.BlockEntityUtils;
 import com.github.sib_energy_craft.solar_panels.block.AbstractSolarPanelBlock;
+import com.github.sib_energy_craft.solar_panels.screen.SolarPanelScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.LockableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -76,6 +81,18 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
     protected void writeNbt(@NotNull NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, this.inventory);
+    }
+
+    @Override
+    public void writeScreenOpeningData(@NotNull ServerPlayerEntity player,
+                                       @NotNull PacketByteBuf buf) {
+        buf.writeBlockPos(pos);
+    }
+
+    @Override
+    protected @NotNull ScreenHandler createScreenHandler(int syncId,
+                                                         @NotNull PlayerInventory playerInventory) {
+        return new SolarPanelScreenHandler(syncId, playerInventory, this, this.propertyMap);
     }
 
     public static void tick(@NotNull World world,

@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "sib_energy_craft:low_voltage_solar_panel"
+    ]
+  },
+  "criteria": {
+    "has_l1_energy_transformer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sib_energy_craft:l1_energy_transformer"
+            ]
+          }
+        ]
+      }
+    },
+    "has_solar_panel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sib_energy_craft:solar_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "sib_energy_craft:low_voltage_solar_panel"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_l1_energy_transformer",
+      "has_solar_panel",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -53,9 +53,14 @@ public abstract class AbstractSolarPanelBlock extends BlockWithEntity {
         return ActionResult.CONSUME;
     }
 
-    protected abstract void openScreen(@NotNull World world,
-                                       @NotNull BlockPos blockPos,
-                                       @NotNull PlayerEntity playerEntity);
+    protected void openScreen(@NotNull World world,
+                              @NotNull BlockPos blockPos,
+                              @NotNull PlayerEntity playerEntity) {
+        var blockEntity = world.getBlockEntity(blockPos);
+        if (blockEntity instanceof AbstractSolarPanelBlockEntity solarPanelBlockEntity) {
+            playerEntity.openHandledScreen(solarPanelBlockEntity);
+        }
+    }
 
     @Override
     public void onPlaced(@NotNull World world,

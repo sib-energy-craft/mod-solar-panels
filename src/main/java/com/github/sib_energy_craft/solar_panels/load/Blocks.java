@@ -3,6 +3,7 @@ package com.github.sib_energy_craft.solar_panels.load;
 import com.github.sib_energy_craft.energy_api.utils.Identifiers;
 import com.github.sib_energy_craft.sec_utils.common.Identified;
 import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
+import com.github.sib_energy_craft.solar_panels.block.LowVoltageSolarPanelBlock;
 import com.github.sib_energy_craft.solar_panels.block.SolarPanelBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Material;
@@ -17,6 +18,7 @@ import static com.github.sib_energy_craft.sec_utils.utils.BlockUtils.register;
  */
 public final class Blocks implements ModRegistrar {
     public static final Identified<SolarPanelBlock> SOLAR_PANEL;
+    public static final Identified<LowVoltageSolarPanelBlock> LOW_VOLTAGE_SOLAR_PANEL;
 
     static {
         var solarPanelSettings = FabricBlockSettings.of(Material.METAL)
@@ -26,5 +28,8 @@ public final class Blocks implements ModRegistrar {
 
         var solarPanelBlock = new SolarPanelBlock(solarPanelSettings, 1);
         SOLAR_PANEL = register(Identifiers.of("solar_panel"), solarPanelBlock);
+
+        var lowVoltageSolarPanelBlock = new LowVoltageSolarPanelBlock(solarPanelSettings, 8);
+        LOW_VOLTAGE_SOLAR_PANEL = register(Identifiers.of("low_voltage_solar_panel"), lowVoltageSolarPanelBlock);
     }
 }

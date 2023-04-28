@@ -11,17 +11,16 @@ import org.jetbrains.annotations.NotNull;
  * @since 0.0.1
  * @author sibmaks
  */
-public class SolarPanelBlockEntity extends AbstractSolarPanelBlockEntity {
-    public SolarPanelBlockEntity(@NotNull BlockPos pos,
-                                 @NotNull BlockState state,
-                                 @NotNull AbstractSolarPanelBlock block) {
-        super(Entities.SOLAR_PANEL, pos, state, block);
+public class LowVoltageSolarPanelBlockEntity extends AbstractSolarPanelBlockEntity {
+    public LowVoltageSolarPanelBlockEntity(@NotNull BlockPos pos,
+                                           @NotNull BlockState state,
+                                           @NotNull AbstractSolarPanelBlock block) {
+        super(Entities.LOW_VOLTAGE_SOLAR_PANEL, pos, state, block);
     }
 
     @Override
     protected @NotNull Text getContainerName() {
-        return Text.translatable("container.solar_panel");
+        return Text.translatable("container.low_voltage_solar_panel");
     }
 
 }
-

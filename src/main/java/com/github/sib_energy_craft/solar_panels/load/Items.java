@@ -14,6 +14,7 @@ import static com.github.sib_energy_craft.sec_utils.utils.ItemUtils.register;
  */
 public final class Items implements ModRegistrar {
     public static final SolarPanelBlockItem SOLAR_PANEL;
+    public static final SolarPanelBlockItem LOW_VOLTAGE_SOLAR_PANEL;
 
     static {
         var settings = new Item.Settings();
@@ -21,5 +22,9 @@ public final class Items implements ModRegistrar {
         SOLAR_PANEL = register(ItemGroups.FUNCTIONAL,
                 Blocks.SOLAR_PANEL,
                 it -> new SolarPanelBlockItem(it, settings, Energy.of(1)));
+
+        LOW_VOLTAGE_SOLAR_PANEL = register(ItemGroups.FUNCTIONAL,
+                Blocks.LOW_VOLTAGE_SOLAR_PANEL,
+                it -> new SolarPanelBlockItem(it, settings, Energy.of(8)));
     }
 }
