@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sib_energy_craft:block/solar_panel"
+    }
+  }
+}

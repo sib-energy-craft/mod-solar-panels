@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DGD",
+    "GDG",
+    "CEC"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "D": {
+      "item": "sib_energy_craft:coal_dust"
+    },
+    "E": {
+      "item": "sib_energy_craft:energy_generator"
+    },
+    "C": {
+      "item": "sib_energy_craft:energy_circuit"
+    }
+  },
+  "result": {
+    "item": "sib_energy_craft:solar_panel"
+  }
+}
