@@ -27,10 +27,21 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+
     modImplementation("com.github.sib-energy-craft:energy-api:${project.sec_energy_api_version}")
     modImplementation("com.github.sib-energy-craft:sec-utils:${project.sec_utils_version}")
+    modImplementation("com.github.sib-energy-craft:energy-containers-api:${project.sec_energy_containers_api_version}")
+    modImplementation("com.github.sib-energy-craft:energy-machines-api:${project.sec_energy_machines_api_version}")
 
+    modImplementation("com.github.sib-energy-craft:mod-tools-api:${project.sec_mod_tools_api_version}")
+    modImplementation("com.github.sib-energy-craft:mod-iron-craft-table-api:${project.sec_mod_iron_craft_table_api_version}")
+
+    modImplementation("com.github.sib-energy-craft:mod-ores:${project.sec_mod_ores_version}")
+    modImplementation("com.github.sib-energy-craft:mod-tools-impl:${project.sec_mod_tools_impl_version}")
+    modImplementation("com.github.sib-energy-craft:mod-recipes:${project.sec_mod_recipies_version}")
+    modImplementation("com.github.sib-energy-craft:mod-metallurgy:${project.sec_mod_metallurgy_version}")
     modImplementation("com.github.sib-energy-craft:mod-energy-items:${project.sec_mod_energy_items_version}")
+    modImplementation("com.github.sib-energy-craft:mod-rubber:${project.sec_mod_rubber_version}")
     modImplementation("com.github.sib-energy-craft:mod-machines:${project.sec_mod_machines_version}")
 }
 
