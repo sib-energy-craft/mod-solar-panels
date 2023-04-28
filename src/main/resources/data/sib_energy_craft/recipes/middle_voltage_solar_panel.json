@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "STS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "sib_energy_craft:low_voltage_solar_panel"
+    },
+    "T": {
+      "item": "sib_energy_craft:l2_energy_transformer"
+    }
+  },
+  "result": {
+    "item": "sib_energy_craft:middle_voltage_solar_panel"
+  }
+}

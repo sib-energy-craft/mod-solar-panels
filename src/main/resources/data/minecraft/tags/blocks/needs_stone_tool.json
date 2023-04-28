@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "sib_energy_craft:solar_panel",
-    "sib_energy_craft:low_voltage_solar_panel"
+    "sib_energy_craft:low_voltage_solar_panel",
+    "sib_energy_craft:middle_voltage_solar_panel"
   ]
 }

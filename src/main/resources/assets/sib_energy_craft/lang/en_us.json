@@ -1,9 +1,10 @@
 {
   "block.sib_energy_craft.solar_panel": "Solar Panel",
-
   "container.solar_panel": "Solar Panel",
 
   "block.sib_energy_craft.low_voltage_solar_panel": "LV Solar Panel",
+  "container.low_voltage_solar_panel": "LV Solar Panel",
 
-  "container.low_voltage_solar_panel": "LV Solar Panel"
+  "block.sib_energy_craft.middle_voltage_solar_panel": "MV Solar Panel",
+  "container.middle_voltage_solar_panel": "MV Solar Panel"
 }

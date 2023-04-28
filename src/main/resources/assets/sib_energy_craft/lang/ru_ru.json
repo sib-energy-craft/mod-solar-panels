@@ -1,9 +1,10 @@
 {
   "block.sib_energy_craft.solar_panel": "Солнечная панель",
-
   "container.solar_panel": "Солнечная панель",
 
   "block.sib_energy_craft.low_voltage_solar_panel": "Солнечная панель НН",
+  "container.low_voltage_solar_panel": "Солнечная панель НН",
 
-  "container.low_voltage_solar_panel": "Солнечная панель НН"
+  "block.sib_energy_craft.middle_voltage_solar_panel": "Солнечная панель СН",
+  "container.middle_voltage_solar_panel": "Солнечная панель СН"
 }
