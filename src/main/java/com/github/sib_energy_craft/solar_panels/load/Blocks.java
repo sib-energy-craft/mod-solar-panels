@@ -2,7 +2,7 @@ package com.github.sib_energy_craft.solar_panels.load;
 
 import com.github.sib_energy_craft.energy_api.utils.Identifiers;
 import com.github.sib_energy_craft.sec_utils.common.Identified;
-import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
+import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
 import com.github.sib_energy_craft.solar_panels.block.HighVoltageSolarPanelBlock;
 import com.github.sib_energy_craft.solar_panels.block.LowVoltageSolarPanelBlock;
 import com.github.sib_energy_craft.solar_panels.block.MiddleVoltageSolarPanelBlock;
@@ -18,7 +18,7 @@ import static com.github.sib_energy_craft.sec_utils.utils.BlockUtils.register;
  * @since 0.0.1
  * @author sibmaks
  */
-public final class Blocks implements ModRegistrar {
+public final class Blocks implements DefaultModInitializer {
     public static final Identified<SolarPanelBlock> SOLAR_PANEL;
     public static final Identified<LowVoltageSolarPanelBlock> LOW_VOLTAGE_SOLAR_PANEL;
     public static final Identified<MiddleVoltageSolarPanelBlock> MIDDLE_VOLTAGE_SOLAR_PANEL;

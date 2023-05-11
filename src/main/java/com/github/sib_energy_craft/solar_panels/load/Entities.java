@@ -1,6 +1,6 @@
 package com.github.sib_energy_craft.solar_panels.load;
 
-import com.github.sib_energy_craft.sec_utils.load.ModRegistrar;
+import com.github.sib_energy_craft.sec_utils.load.DefaultModInitializer;
 import com.github.sib_energy_craft.solar_panels.block.entity.HighVoltageSolarPanelBlockEntity;
 import com.github.sib_energy_craft.solar_panels.block.entity.LowVoltageSolarPanelBlockEntity;
 import com.github.sib_energy_craft.solar_panels.block.entity.MiddleVoltageSolarPanelBlockEntity;
@@ -13,7 +13,7 @@ import static com.github.sib_energy_craft.sec_utils.utils.EntityUtils.register;
  * @since 0.0.1
  * @author sibmaks
  */
-public final class Entities implements ModRegistrar {
+public final class Entities implements DefaultModInitializer {
     public static BlockEntityType<SolarPanelBlockEntity> SOLAR_PANEL;
     public static BlockEntityType<LowVoltageSolarPanelBlockEntity> LOW_VOLTAGE_SOLAR_PANEL;
     public static BlockEntityType<MiddleVoltageSolarPanelBlockEntity> MIDDLE_VOLTAGE_SOLAR_PANEL;

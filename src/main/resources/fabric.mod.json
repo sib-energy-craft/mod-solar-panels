@@ -17,7 +17,10 @@
   },
   "entrypoints": {
     "main": [
-      "com.github.sib_energy_craft.solar_panels.load.Loader"
+      "com.github.sib_energy_craft.solar_panels.load.Blocks",
+      "com.github.sib_energy_craft.solar_panels.load.Entities",
+      "com.github.sib_energy_craft.solar_panels.load.Items",
+      "com.github.sib_energy_craft.solar_panels.load.Screens"
     ]
   }
 }
