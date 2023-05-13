@@ -99,8 +99,11 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
                             @NotNull BlockPos pos,
                             @NotNull BlockState state,
                             @NotNull AbstractSolarPanelBlockEntity blockEntity) {
+        if (world.isClient) {
+            return;
+        }
         blockEntity.energy = Energy.ZERO;
-        if (world.isClient || !world.getDimension().hasSkyLight()) {
+        if (!world.getDimension().hasSkyLight()) {
             blockEntity.working = false;
             return;
         }
