@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "sec-mod-solar-panels",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "name": "SibEnergyCraft - Solar panels",
   "authors": [
     "sibmaks"
@@ -19,8 +19,10 @@
     "main": [
       "com.github.sib_energy_craft.solar_panels.load.Blocks",
       "com.github.sib_energy_craft.solar_panels.load.Entities",
-      "com.github.sib_energy_craft.solar_panels.load.Items",
-      "com.github.sib_energy_craft.solar_panels.load.Screens"
+      "com.github.sib_energy_craft.solar_panels.load.Items"
+    ],
+    "client": [
+      "com.github.sib_energy_craft.solar_panels.load.client.Screens"
     ]
   }
 }

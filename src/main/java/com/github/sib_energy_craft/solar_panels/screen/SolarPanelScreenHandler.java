@@ -1,6 +1,6 @@
 package com.github.sib_energy_craft.solar_panels.screen;
 
-import com.github.sib_energy_craft.solar_panels.load.Screens;
+import com.github.sib_energy_craft.solar_panels.load.client.Screens;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.network.PacketByteBuf;
