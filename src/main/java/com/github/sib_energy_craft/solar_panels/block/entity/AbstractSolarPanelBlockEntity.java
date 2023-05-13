@@ -25,6 +25,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -103,15 +105,19 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
             return;
         }
         blockEntity.energy = Energy.ZERO;
-        if (!world.getDimension().hasSkyLight()) {
+        var upPos = pos.up();
+        if (!world.isSkyVisible(upPos) || !world.getDimension().hasSkyLight()) {
             blockEntity.working = false;
             return;
         }
 
-        long timeOfDay = world.getTimeOfDay();
-        int light = world.getLightLevel(blockEntity.getPos().up(), 0);
+        int lightLevel = world.getLightLevel(LightType.SKY, upPos) - world.getAmbientDarkness();
+        float skyAngleRadians = world.getSkyAngleRadians(1.0f);
+        float radial = skyAngleRadians < Math.PI ? 0.0f : (float) (Math.PI * 2);
+        skyAngleRadians += (radial - skyAngleRadians) * 0.2f;
+        lightLevel = Math.round(lightLevel * MathHelper.cos(skyAngleRadians));
 
-        blockEntity.working = timeOfDay >= 0 && timeOfDay <= 12000 && light >= 15;
+        blockEntity.working = lightLevel >= 10;
 
         if(blockEntity.working) {
             blockEntity.energy = blockEntity.block.getEnergyPerTick();
