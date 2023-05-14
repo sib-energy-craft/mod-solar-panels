@@ -117,7 +117,7 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
         skyAngleRadians += (radial - skyAngleRadians) * 0.2f;
         lightLevel = Math.round(lightLevel * MathHelper.cos(skyAngleRadians));
 
-        blockEntity.working = lightLevel >= 10;
+        blockEntity.working = lightLevel >= 8;
 
         if(blockEntity.working) {
             blockEntity.energy = blockEntity.block.getEnergyPerTick();
