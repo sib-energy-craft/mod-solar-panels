@@ -1,6 +1,6 @@
 package com.github.sib_energy_craft.solar_panels.screen;
 
-import com.github.sib_energy_craft.solar_panels.load.client.Screens;
+import com.github.sib_energy_craft.solar_panels.load.ScreenHandlers;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.network.PacketByteBuf;
@@ -17,12 +17,12 @@ public class SolarPanelScreenHandler extends AbstractSolarPanelScreenHandler {
                                    @NotNull PlayerInventory playerInventory,
                                    @NotNull Inventory inventory,
                                    @NotNull PropertyDelegate propertyDelegate) {
-        super(Screens.SOLAR_PANEL, syncId, playerInventory, inventory, propertyDelegate);
+        super(ScreenHandlers.SOLAR_PANEL, syncId, playerInventory, inventory, propertyDelegate);
     }
 
     public SolarPanelScreenHandler(int syncId,
                                    @NotNull PlayerInventory playerInventory,
                                    @NotNull PacketByteBuf packetByteBuf) {
-        super(Screens.SOLAR_PANEL, syncId, playerInventory);
+        super(ScreenHandlers.SOLAR_PANEL, syncId, playerInventory);
     }
 }
