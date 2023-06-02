@@ -112,7 +112,7 @@ public abstract class AbstractSolarPanelScreenHandler extends SlotsScreenHandler
             if(slotMeta != null) {
                 var slotType = slotMeta.getSlotType();
                 if (slotType == SolarPanelSlotTypes.SOLAR_PANEL) {
-                    if (!insertItem(slotGroupsMeta, slotStack, SlotTypes.QUICK_ACCESS, SlotTypes.PLAYER_INVENTORY)) {
+                    if (!insertItem(slotGroupsMeta, slotStack, SlotTypes.PLAYER_INVENTORY, SlotTypes.QUICK_ACCESS)) {
                         return ItemStack.EMPTY;
                     }
                 } else {

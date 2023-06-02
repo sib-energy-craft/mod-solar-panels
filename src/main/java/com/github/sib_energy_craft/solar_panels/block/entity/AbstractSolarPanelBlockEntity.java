@@ -190,8 +190,8 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
         if (stack.getCount() > this.getMaxCountPerStack()) {
             stack.setCount(this.getMaxCountPerStack());
         }
-        boolean bl = !stack.isEmpty() && stack.isItemEqual(itemStack) && ItemStack.areNbtEqual(stack, itemStack);
-        if (slot == CHARGE_SLOT && !bl) {
+        boolean slotChanged = !stack.isEmpty() && ItemStack.canCombine(stack, itemStack);
+        if (slot == CHARGE_SLOT && !slotChanged) {
             this.markDirty();
         }
     }
