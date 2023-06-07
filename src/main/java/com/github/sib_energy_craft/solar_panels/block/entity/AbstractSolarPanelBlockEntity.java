@@ -22,6 +22,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -101,7 +102,7 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
                             @NotNull BlockPos pos,
                             @NotNull BlockState state,
                             @NotNull AbstractSolarPanelBlockEntity blockEntity) {
-        if (world.isClient) {
+        if (world.isClient || !(world instanceof ServerWorld serverWorld)) {
             return;
         }
         blockEntity.energy = Energy.ZERO;
@@ -130,7 +131,7 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
                 var lastEnergy = chargeableItem.charge(chargingStack, blockEntity.energy.intValue());
                 blockEntity.energy = Energy.of(lastEnergy);
             }
-            blockEntity.tick(blockEntity);
+            blockEntity.tick(serverWorld, blockEntity);
         }
 
         AbstractSolarPanelBlockEntity.markDirty(world, pos, state);
