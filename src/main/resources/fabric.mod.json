@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "sec-mod-solar-panels",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "name": "SibEnergyCraft - Solar panels",
   "authors": [
     "sibmaks"
@@ -13,7 +13,7 @@
   "depends": {
     "fabricloader": ">=0.14.21",
     "fabric": "*",
-    "minecraft": "1.20-rc.1"
+    "minecraft": "1.20"
   },
   "entrypoints": {
     "main": [
