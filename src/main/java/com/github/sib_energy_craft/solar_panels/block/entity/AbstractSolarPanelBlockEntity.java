@@ -234,5 +234,9 @@ public abstract class AbstractSolarPanelBlockEntity extends LockableContainerBlo
         return false;
     }
 
+    @Override
+    public boolean isSupplierDead() {
+        return isRemoved();
+    }
 }
 
